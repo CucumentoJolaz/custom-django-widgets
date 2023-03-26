@@ -9,5 +9,6 @@ urlpatterns = [
     path('xdsoft-datetimepicker/', views.XDSoftDateTimePickerView.as_view(), name='xdsoft'),
     path('bootstrap-datetimepicker/', views.BootstrapDateTimePickerView.as_view(), name='bootstrap'),
     path('fengyuanchen-datepicker/', views.FengyuanChenDatePickerView.as_view(), name='fengyuanchen'),
+    path('custom-multiple-selector/', views.EventsSelectionView.as_view(), name='multiple_selector'),
     path('event/<int:pk>/', views.EventDetailView.as_view(), name='event_detail'),
 ]

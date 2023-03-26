@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_filters static %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+{% block content %}
+  <h2>Custom multiple selector</h2>
+
+  <form method="post" autocomplete="off" novalidate>
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-success">Select events</button>
+  </form>
+{% endblock %}

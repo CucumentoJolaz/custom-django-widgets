@@ -9,3 +9,14 @@ class Event(models.Model):
 
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'pk': self.pk})
+
+    def __str__(self):
+        return f'{self.name}'
+
+class EventsBunch(models.Model):
+
+    name = models.CharField(max_length=50)
+    events = models.ManyToManyField(Event)
+
+    def __str__(self):
+        return f'{self.name}'
