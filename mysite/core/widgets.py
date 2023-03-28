@@ -44,6 +44,7 @@ class CheckboxSelectMultipleWithLinksInput(CheckboxSelectMultiple):
         else:
             instances = [None for _ in ids]
         choices_with_models = [(choice[0], choice[1], instance) for choice, instance in zip(self.choices, instances)]
+
         for index, (option_value, option_label, instance) in enumerate(choices_with_models):
             if option_value is None:
                 option_value = ''
