@@ -45,9 +45,8 @@ class FengyuanChenEventForm(forms.ModelForm):
 
 
 class EventsSelectionForm(forms.ModelForm):
-
     events = forms.ModelMultipleChoiceField(queryset=Event.objects.all(),
-                                            widget=CheckboxSelectMultipleWithLinksInput())
+                                            widget=CheckboxSelectMultipleWithLinksInput(model=Event))
 
     class Meta:
         model = EventsBunch
