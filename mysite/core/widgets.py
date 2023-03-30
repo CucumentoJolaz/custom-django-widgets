@@ -28,9 +28,9 @@ class CheckboxSelectMultipleWithLinksInput(CheckboxSelectMultiple):
     option_template_name = 'widgets/checkbox_option_with_links.html'
 
 
-    def __init__(self, model=None, *args, **kwargs):
+    def __init__(self, queryset=None, *args, **kwargs):
         super().__init__()
-        self.model = model
+        self.queryset = queryset
 
 
     def optgroups(self, name, value, attrs=None):
@@ -39,8 +39,8 @@ class CheckboxSelectMultipleWithLinksInput(CheckboxSelectMultiple):
         has_selected = False
 
         ids = [choice[0] for choice in self.choices]
-        if self.model:
-            instances = self.model.objects.filter(id__in=ids)
+        if self.queryset:
+            instances = self.queryset
         else:
             instances = [None for _ in ids]
         choices_with_models = [(choice[0], choice[1], instance) for choice, instance in zip(self.choices, instances)]
